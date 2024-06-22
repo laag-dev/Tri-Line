@@ -4,25 +4,23 @@ import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 
-
 public class FormInit extends javax.swing.JFrame {
-
 
     public FormInit() {
         init();
     }
-    
-    public final void init(){
-      
+
+    public final void init() {
+
         setUndecorated(true);
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
         panelBg.requestFocus();
+        Border borderButton = BorderFactory.createLineBorder(new Color (243,211,246),2);
+        panelButton.setBorder(borderButton);
     }
-   
-            
-            
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -33,6 +31,8 @@ public class FormInit extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtPlayer2 = new javax.swing.JTextField();
         txtPlayer1 = new javax.swing.JTextField();
+        panelButton = new javax.swing.JPanel();
+        lbInit = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -41,6 +41,11 @@ public class FormInit extends javax.swing.JFrame {
 
         panelBg.setBackground(new java.awt.Color(14, 19, 49));
         panelBg.setPreferredSize(new java.awt.Dimension(516, 415));
+        panelBg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                panelBgMousePressed(evt);
+            }
+        });
 
         lbClose.setBackground(new java.awt.Color(60, 63, 65));
         lbClose.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
@@ -74,12 +79,25 @@ public class FormInit extends javax.swing.JFrame {
         txtPlayer2.setAlignmentX(0.0F);
         txtPlayer2.setAlignmentY(0.0F);
         txtPlayer2.setBorder(null);
+        txtPlayer2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPlayer2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPlayer2FocusLost(evt);
+            }
+        });
         txtPlayer2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 txtPlayer2MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 txtPlayer2MouseExited(evt);
+            }
+        });
+        txtPlayer2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPlayer2KeyTyped(evt);
             }
         });
 
@@ -91,6 +109,14 @@ public class FormInit extends javax.swing.JFrame {
         txtPlayer1.setAlignmentX(0.0F);
         txtPlayer1.setAlignmentY(0.0F);
         txtPlayer1.setBorder(null);
+        txtPlayer1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPlayer1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPlayer1FocusLost(evt);
+            }
+        });
         txtPlayer1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 txtPlayer1MouseEntered(evt);
@@ -99,24 +125,61 @@ public class FormInit extends javax.swing.JFrame {
                 txtPlayer1MouseExited(evt);
             }
         });
+        txtPlayer1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPlayer1KeyTyped(evt);
+            }
+        });
+
+        panelButton.setBackground(new java.awt.Color(42, 22, 79));
+
+        lbInit.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        lbInit.setForeground(new java.awt.Color(241, 227, 252));
+        lbInit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbInit.setText("INICIAR");
+        lbInit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbInit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbInitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbInitMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelButtonLayout = new javax.swing.GroupLayout(panelButton);
+        panelButton.setLayout(panelButtonLayout);
+        panelButtonLayout.setHorizontalGroup(
+            panelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbInit, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+        );
+        panelButtonLayout.setVerticalGroup(
+            panelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbInit, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout panelBgLayout = new javax.swing.GroupLayout(panelBg);
         panelBg.setLayout(panelBgLayout);
         panelBgLayout.setHorizontalGroup(
             panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBgLayout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(112, 112, 112))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBgLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbClose, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(panelBgLayout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(112, 112, 112))
-            .addGroup(panelBgLayout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelBgLayout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelBgLayout.createSequentialGroup()
+                        .addGap(165, 165, 165)
+                        .addComponent(panelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelBgLayout.setVerticalGroup(
@@ -130,24 +193,20 @@ public class FormInit extends javax.swing.JFrame {
                 .addComponent(txtPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(228, 228, 228))
+                .addGap(60, 60, 60)
+                .addComponent(panelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelBg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(panelBg, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelBg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(panelBg, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -162,7 +221,7 @@ public class FormInit extends javax.swing.JFrame {
     }//GEN-LAST:event_lbCloseMouseEntered
 
     private void lbCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbCloseMouseExited
-        lbClose.setForeground(new Color(240,192,255));
+        lbClose.setForeground(new Color(240, 192, 255));
     }//GEN-LAST:event_lbCloseMouseExited
 
     private void txtPlayer1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPlayer1MouseEntered
@@ -183,13 +242,62 @@ public class FormInit extends javax.swing.JFrame {
         txtPlayer2.setBorder(null);
     }//GEN-LAST:event_txtPlayer2MouseExited
 
+    private void txtPlayer1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPlayer1FocusGained
+        if (txtPlayer1.getText().equals("JUGADOR 1")) {
+            txtPlayer1.setText("");
+        }
+
+    }//GEN-LAST:event_txtPlayer1FocusGained
+
+    private void txtPlayer2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPlayer2FocusGained
+        if (txtPlayer2.getText().equals("JUGADOR 2"))
+            txtPlayer2.setText("");
+    }//GEN-LAST:event_txtPlayer2FocusGained
+
+    private void txtPlayer1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPlayer1FocusLost
+        if (txtPlayer1.getText().equals(""))
+            txtPlayer1.setText("JUGADOR 1");
+    }//GEN-LAST:event_txtPlayer1FocusLost
+
+    private void txtPlayer2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPlayer2FocusLost
+        if (txtPlayer2.getText().equals(""))
+            txtPlayer2.setText("JUGADOR 2");
+    }//GEN-LAST:event_txtPlayer2FocusLost
+
+    private void panelBgMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelBgMousePressed
+        panelBg.requestFocus();
+    }//GEN-LAST:event_panelBgMousePressed
+
+    private void txtPlayer1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPlayer1KeyTyped
+        char letter = Character.toUpperCase(evt.getKeyChar());
+        evt.setKeyChar(letter);
+        if(txtPlayer1.getText().length()>=8)
+            evt.consume();
+    }//GEN-LAST:event_txtPlayer1KeyTyped
+
+    private void txtPlayer2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPlayer2KeyTyped
+        char letter = Character.toUpperCase(evt.getKeyChar());
+        evt.setKeyChar(letter);
+        if(txtPlayer2.getText().length()>=8)
+            evt.consume();
+    }//GEN-LAST:event_txtPlayer2KeyTyped
+
+    private void lbInitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbInitMouseEntered
+      panelButton.setBackground(new Color (126,49,196));
+    }//GEN-LAST:event_lbInitMouseEntered
+
+    private void lbInitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbInitMouseExited
+        panelButton.setBackground(new Color (42,22,79));
+    }//GEN-LAST:event_lbInitMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lbClose;
+    private javax.swing.JLabel lbInit;
     private javax.swing.JPanel panelBg;
+    private javax.swing.JPanel panelButton;
     private javax.swing.JTextField txtPlayer1;
     private javax.swing.JTextField txtPlayer2;
     // End of variables declaration//GEN-END:variables
